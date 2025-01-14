@@ -230,6 +230,8 @@ vim.keymap.set('n', '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank selection to system clipboard' })
 vim.keymap.set('n', '<leader>Y', '"+Y', { desc = 'Yank line to system clipboard' })
 
+vim.keymap.set('n', '<BS>', '<C-6>')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
