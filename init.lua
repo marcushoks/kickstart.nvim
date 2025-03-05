@@ -703,18 +703,31 @@ require('lazy').setup({
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
+
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
+        ts_ls = {
+          filetypes = {
+            'javascript',
+            'typescript',
+            'javascriptreact',
+            'typescriptreact',
+          },
+        },
 
         prettierd = {},
 
         eslint_d = {},
 
+        volar = {
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },
