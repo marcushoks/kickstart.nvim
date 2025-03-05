@@ -655,6 +655,11 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        prettierd = {},
+
+        eslint_d = {},
+
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -740,7 +745,9 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettierd', 'eslint_d', stop_after_first = true },
+        typescript = { 'prettierd', 'eslint_d', stop_after_first = true },
+        vue = { 'prettierd', 'eslint_d', stop_after_first = true },
       },
     },
   },
