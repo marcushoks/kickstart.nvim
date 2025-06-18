@@ -159,6 +159,10 @@ vim.opt.scrolloff = 10
 
 vim.opt.colorcolumn = '80'
 
+vim.diagnostic.config {
+  virtual_text = true,
+}
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
