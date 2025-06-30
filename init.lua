@@ -232,7 +232,7 @@ vim.keymap.set('n', '<leader>J', 'mzJ`z', { desc = 'Keep cursor position and joi
 
 vim.keymap.set('n', '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank selection to system clipboard' })
-vim.keymap.set('n', '<leader>Y', '"+Y', { desc = 'Yank line to system clipboard' })
+vim.keymap.set('n', '<leader>Y', '"+y$', { desc = 'Yank until end of line to system clipboard' })
 
 vim.keymap.set('n', '<BS>', '<C-6>')
 
