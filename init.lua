@@ -418,7 +418,7 @@ do
     },
   }
 
-  vim.pack.add { { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } }
+  vim.pack.add { { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' } }
 
   -- Load the colorscheme here.
   -- Like many other themes, this one has different styles, and you could load
@@ -724,7 +724,7 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     -- clangd = {},
-    -- gopls = {},
+    gopls = {},
     -- pyright = {},
     -- rust_analyzer = {},
     --
@@ -733,25 +733,7 @@ do
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
 
-    ts_ls = {
-      cmd = { 'tsgo' },
-      filetypes = {
-        'javascript',
-        'typescript',
-        'javascriptreact',
-        'typescriptreact',
-      },
-    },
-
-    prettierd = {},
-
-    volar = {
-      init_options = {
-        vue = {
-          hybridMode = false,
-        },
-      },
-    },
+    tsgo = {},
 
     stylua = {}, -- Used to format Lua code
 
@@ -828,11 +810,17 @@ do
   -- [[ Formatting ]]
   vim.pack.add { gh 'stevearc/conform.nvim' }
   require('conform').setup {
-    notify_on_error = false,
+    notify_on_error = true,
     format_on_save = function(bufnr)
       -- You can specify filetypes to autoformat on save here:
       local enabled_filetypes = {
-        -- lua = true,
+        lua = true,
+        go = true,
+        javascript = true,
+        typescript = true,
+        json = true,
+        html = true,
+        css = true,
         -- python = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
@@ -851,12 +839,12 @@ do
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
-      javascript = { "prettierd", "prettier", stop_after_first = true },
-      typescript = { "prettierd", "prettier", stop_after_first = true },
-      vue = { "prettierd", "prettier", stop_after_first = true },
-      json = { "prettierd", "prettier", stop_after_first = true },
-      html = { "prettierd", "prettier", stop_after_first = true },
-      css = { "prettierd", "prettier", stop_after_first = true },
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
+      typescript = { 'prettierd', 'prettier', stop_after_first = true },
+      vue = { 'prettierd', 'prettier', stop_after_first = true },
+      json = { 'prettierd', 'prettier', stop_after_first = true },
+      html = { 'prettierd', 'prettier', stop_after_first = true },
+      css = { 'prettierd', 'prettier', stop_after_first = true },
     },
   }
 
